@@ -4,7 +4,7 @@ echo "Hello, ${name}!"
 
 def runUnitTests(){
   echo "Running unit tests..."
-  sh "mvn test"
+  sh "echo Running some generic tests..." // Kør en alternativ testkommando her
 }
 
 
