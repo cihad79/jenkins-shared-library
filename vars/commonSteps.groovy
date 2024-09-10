@@ -15,3 +15,14 @@ def createArtifact(String artifactPath, String content) {
     echo "Creating artifact at: ${artifactPath}"
     sh "echo '${content}' > ${artifactPath}"
 }
+
+// Function to run unit tests
+def runUnitTests() {
+    echo "Running unit tests..."
+    sh "echo Running some generic tests..." // Kør en alternativ testkommando her
+}
+
+// Function to deploy to an environment
+def deployToEnv(String env) {
+    echo "Deploying to ${env} environment..."
+}
