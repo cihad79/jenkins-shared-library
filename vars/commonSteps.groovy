@@ -1,13 +1,17 @@
-def sayHello(String name){
-echo "Hello, ${name}!"
+// Function to stash an artifact
+def stashArtifact(String artifactName, String includes) {
+    echo "Stashing artifact: ${artifactName}"
+    stash includes: includes, name: artifactName
 }
 
-def runUnitTests(){
-  echo "Running unit tests..."
-  sh "echo Running some generic tests..." // Kør en alternativ testkommando her
+// Function to unstash an artifact
+def unstashArtifact(String artifactName) {
+    echo "Unstashing artifact: ${artifactName}"
+    unstash name: artifactName
 }
 
-
-def deployToEnv(String env){
-  echo "Deploying to ${env} environment..."
+// Function to handle artifact creation (example)
+def createArtifact(String artifactPath, String content) {
+    echo "Creating artifact at: ${artifactPath}"
+    sh "echo '${content}' > ${artifactPath}"
 }
