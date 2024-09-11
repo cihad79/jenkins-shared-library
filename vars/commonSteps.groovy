@@ -1,11 +1,3 @@
-// Function to stash an artifact
-
-// Function to unstash an artifact
-def unstashArtifact(String artifactName) {
-    echo "Unstashing artifact: ${artifactName}"
-    unstash name: artifactName
-}
-
 // Function to handle artifact creation
 def createArtifact(String artifactPath, String content) {
     echo "Creating artifact at: ${artifactPath}"
