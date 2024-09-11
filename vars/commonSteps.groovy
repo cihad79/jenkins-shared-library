@@ -1,8 +1,4 @@
 // Function to stash an artifact
-def stashArtifact(String artifactName, String includes) {
-    echo "Stashing artifact: ${artifactName}"
-    stash includes: includes, name: artifactName, useDefaultExcludes: false
-}
 
 // Function to unstash an artifact
 def unstashArtifact(String artifactName) {
