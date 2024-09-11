@@ -10,7 +10,7 @@ def unstashArtifact(String artifactName) {
     unstash name: artifactName
 }
 
-// Function to handle artifact creation
+// Function to create an artifact
 def createArtifact(String artifactPath, String content) {
     echo "Creating artifact at: ${artifactPath}"
     writeFile file: artifactPath, text: content
@@ -26,4 +26,12 @@ def runUnitTests() {
 def deployToEnv(String env) {
     echo "Deploying to ${env} environment..."
     sh "echo Deploying to ${env}"  // Replace with actual deployment command
+}
+
+// Function to build another job and get the result
+def buildJob(String jobName, List<ParameterValue> parameters = []) {
+    echo "Building job: ${jobName}"
+    def result = build job: jobName, parameters: parameters
+    echo "Build result: ${result.result}"
+    return result
 }
